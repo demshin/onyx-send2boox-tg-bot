@@ -2,6 +2,15 @@
 
 Python code to handle files Onyx Boox e-book reader via Send2Boox service.
 
+** This is gian-didom personal fork of the original project. **
+This fork solves a series of problems I faced with the original project, such as:
+- The files being pushed to the cloud, but with a NaN:Nan timestamp, which makes the files not appear in the reader.
+- The fix of the oss2 multipart upload library, which reliles on the permissions to read the already uploaded file parts (not available with the SST token)
+- The double dot in the file extension
+- The extension being properly set, instead of the .txt used by default
+
+## Still to fix
+The files appear on the tables, but need to be downloaded again because the first download fails.
 
 # Usage
 
