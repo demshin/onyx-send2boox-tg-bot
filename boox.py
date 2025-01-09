@@ -44,7 +44,7 @@ def read_config(filename="config.ini"):
 class Boox:
 
     def __init__(self, config, code=None, skip_init=False,
-                 show_log=False, device_mac=None):
+                 show_log=False, device_mac=""):
 
         if show_log:
             logging.basicConfig(level=logging.NOTSET)
@@ -74,7 +74,7 @@ class Boox:
             self.endpoint = onyx_cloud['aliEndpoint']
             
             self.get_sync_token()
-            if not device_mac:
+            if device_mac == "" and config['default']['device_mac'] and config['default']['device_mac'] != "":
                 self.device_mac = config['default']['device_mac']
 
 
@@ -265,7 +265,7 @@ class Boox:
                     "title": file_name,
                     "distributeChannel":"onyx",
                     "guid":idkey,
-                    "mac": self.device_mac,
+                    "mac": self.device_mac
                     "deviceModel": "NoteAir4C",
                     "updatedAt": updated_time,
                      # "createdAt": updated_time,  
