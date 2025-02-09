@@ -1,3 +1,4 @@
 .claudesync/
 __pycache__/config.ini
 config.ini
+venv/
